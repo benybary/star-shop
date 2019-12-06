@@ -1,7 +1,7 @@
 .startWrapper{
     overflow: hidden;
     width: 100%;
-    height: 450px;
+    height: 1450px;
     }
     .star-wars{
         display: flex;
@@ -21,7 +21,7 @@
     
     .crawl{
         position: relative;
-        top: -100px;
+        top: 99999px;
         transform-origin: 50% 100%;
         animation: crawl 60s linear;    
     
