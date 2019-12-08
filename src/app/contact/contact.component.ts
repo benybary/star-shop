@@ -7,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
-  constructor() { }
+  constructor() { 
+    document.querySelector("html").style['overflow-y'] = "scroll";
+
+  }
 
   ngOnInit() {
   }
