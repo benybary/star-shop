@@ -11,4 +11,13 @@ body{
     -moz-background-size: cover;
     -o-background-size: cover;
     background: black;
+    
 }
+
+footer{
+    padding: 1.4em;
+    margin-top: 1.4em;
+    color: #000000;
+    background-color: #feda4a;
+    text-align: center;
+ }
