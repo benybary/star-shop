@@ -9,9 +9,3 @@ export class AppComponent {
   title = 'star-shop';
 }
 
-/**
- * name
- */
-function scrolling() {
-  
-}
