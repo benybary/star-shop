@@ -1,3 +1,4 @@
+
 <p class="text-info">
   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate velit totam, ad sapiente inventore expedita. Id
   deleniti, veritatis quaerat ab iste deserunt magnam, voluptate tenetur numquam cumque, ipsam tempora culpa.
@@ -15,7 +16,7 @@
 </div>
 
 <table class="table table-bordered">
-    <!-- cart -->
+    cart
     <tr class="well">
       <td class="text-right" colspan="4">
         <i class="glyphicon glyphicon-shopping-cart"></i>
@@ -24,7 +25,7 @@
         </a>
       </td>
     </tr>
-    <tr *ngFor="let product of products.items">
+    <tr *ngFor="let product of lstProducts">
       <td class="text-center"><img src="resources/products/{{product.sku}}.jpg" alt="{{product.name}}"/></td>
       <td>
         <a routerLink="/product" (click)="products.moveCurrentTo(product)"><b>{{product.name}}</b></a>
@@ -47,8 +48,3 @@
     </tr>
 </table>
 
-<!-- <form class="form-inline waves-light" mdbWavesEffect>
-    <div class="md-form mt-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search">
-    </div>
-  </form> -->
