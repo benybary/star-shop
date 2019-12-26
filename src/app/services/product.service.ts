@@ -51,12 +51,12 @@ export class ProductService {
    }
 
    public getProducts():any{
-    const studentObserve = new Observable(observer => {
+    const prodObserve = new Observable(observer => {
       setTimeout(() => {
         observer.next(this.lstProducts)
       }, 1000)
     })
-      return studentObserve;
+      return prodObserve;
   }
   }
    // Add new product to DB
