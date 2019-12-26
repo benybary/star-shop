@@ -1,6 +1,8 @@
+
 import { Component, OnInit } from '@angular/core';
 import {Product} from '../product-item/product-item';
 import {ProductService} from '../services/product.service';
+
 
 @Component({
   selector: 'app-home',
@@ -9,17 +11,24 @@ import {ProductService} from '../services/product.service';
 })
 export class HomeComponent implements OnInit {
 
-  lstProducts: Product[];
+  myListProducts: Product[] = [];
+
+  
   
 
   
 
   constructor(private productService: ProductService) { }
 
-  ngOnInit() {
-    this.productService.getProducts().subscribe((data: Product[])=>{
-      this.lstProducts = data;
-    })
-  }
 
-}
+  ngOnInit(): void {
+    const studObserve = this.productService.getProducts();
+    studObserve.subscribe((studData: Product[]) => {this.myListProducts = studData;
+    })
+    ;
+  }
+  title = 'MyObservable';
+
+    
+  }
+  

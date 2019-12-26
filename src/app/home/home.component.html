@@ -1,9 +1,11 @@
+
+<main class="container-fluid">
 <p class="text-info">
   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate velit totam, ad sapiente inventore expedita. Id
   deleniti, veritatis quaerat ab iste deserunt magnam, voluptate tenetur numquam cumque, ipsam tempora culpa.
 </p>
 <div class="row">
-  <div class="col-md-4">
+  <div class="col-sm-4">
     <div class="form-group">
       <div class="input-group">
         <div class="input-group-addon">
@@ -15,40 +17,37 @@
 </div>
 
 <table class="table table-bordered">
-    <!-- cart -->
+    cart
     <tr class="well">
       <td class="text-right" colspan="4">
         <i class="glyphicon glyphicon-shopping-cart"></i>
         <a routerLink="/cart" title="go to shopping cart">
-          <b>{{pdtSvc.getTotalCount()}}</b> items, <b>{{pdtSvc.getTotalPrice() | currency:'USD':true}}</b>
+          <!-- <b>{{pdtSvc.getTotalCount()}}</b> items, <b>{{pdtSvc.getTotalPrice() | currency:'USD':true}}</b> -->
         </a>
       </td>
     </tr>
-    <tr *ngFor="let product of lstProducts">
-      <td class="text-center"><img src="resources/products/{{product.sku}}.jpg" alt="{{product.name}}"/></td>
+
+    <tr *ngFor="let product of myListProducts">
+        <td class="text-center"><img src="../../assets/images/products-imges/{{product.product_ImageSrc}}.jpg" alt="{{product.product_Name}}"/></td>
       <td>
-        <a routerLink="/product" (click)="products.moveCurrentTo(product)"><b>{{product.name}}</b></a>
-        <br/>{{product.description}}
+        <!-- <a routerLink="/product" (click)="products.moveCurrentTo(product)"><b>{{product_Name}}</b></a> -->
+        <br/>{{product.product_Description}}
       </td>
       <td class="text-right">
-        {{product.price | currency:'USD':true}}
+        {{product.product_Price | currency:'USD':true}}
       </td>
       <td class="text-center">
-        <a href (click)="pdtSvc.addCartItem(product, 1)">add to cart</a>
+        <!-- <a href (click)="pdtSvc.addCartItem(product, 1)">add to cart</a> -->
       </td>
     </tr>
     <tr class="well">
       <td class="text-right" colspan="4">
         <i class="glyphicon glyphicon-shopping-cart"></i>
         <a routerLink="/cart" title="go to shopping cart">
-          <b>{{pdtSvc.getTotalCount()}}</b> items, <b>{{pdtSvc.getTotalPrice() | currency:'USD':true}}</b>
+          <!-- <b>{{pdtSvc.getTotalCount()}}</b> items, <b>{{pdtSvc.getTotalPrice() | currency:'USD':true}}</b> -->
         </a>
       </td>
     </tr>
 </table>
 
-<!-- <form class="form-inline waves-light" mdbWavesEffect>
-    <div class="md-form mt-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search">
-    </div>
-  </form> -->
+</main>
