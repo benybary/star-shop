@@ -10,46 +10,64 @@ import {Product} from '../product-item/product-item'
 })
 export class ProductService {
 
-  lstProducts: Product[] = [{
-    
-    product_SKU: 1,
-    product_Name: 'classicChars',
-    product_Description: 'Assorted',
-    product_Price: 22,
-    product_ImageSrc: 'classicChars'
-  },
-  {
-    
-    product_SKU: 2,
-    product_Name: 'LEGO!',
-    product_Description: 'Brick by brick',
-    product_Price: 36,
-    product_ImageSrc: 'lego'
-  },
-  {
-    
-    product_SKU: 3,
-    product_Name: 'Red Trooper',
-    product_Description: 'Better red than dead',
-    product_Price: 15,
-    product_ImageSrc: 'redTrooper'
-  },
-  {
-    
-    product_SKU: 4,
-    product_Name: 'Vader',
-    product_Description: 'Darth Vader + Friend',
-    product_Price: 20,
-    product_ImageSrc: 'vaderTrooper'
-  }
+  lstProducts: Product[] = [
   ]
    
   //uri = 'http://localhost:3000/product';
 
   // DI - Loosely Coupled
   constructor() {
+    this.lstProducts = [{
+    
+      product_SKU: 1,
+      product_Name: 'classicChars',
+      product_Description: 'Assorted',
+      product_Price: 22,
+      product_ImageSrc: 'classicChars'
+    },
+    {
+      
+      product_SKU: 2,
+      product_Name: 'LEGO!',
+      product_Description: 'Brick by brick',
+      product_Price: 36,
+      product_ImageSrc: 'lego'
+    },
+    {
+      
+      product_SKU: 3,
+      product_Name: 'Red Trooper',
+      product_Description: 'Better red than dead',
+      product_Price: 15,
+      product_ImageSrc: 'redTrooper'
+    },
+    {
+      
+      product_SKU: 4,
+      product_Name: 'Vader',
+      product_Description: 'Darth Vader + Friend',
+      product_Price: 20,
+      product_ImageSrc: 'vaderTrooper'
+    }]
    }
 
+   findAll() :Product[] {
+     return this.lstProducts;
+   }
+
+
+   find(id: number): Product {
+    return this.lstProducts[this.getSelectedSKU(id)];
+}
+
+private getSelectedSKU(id: number) {
+  for (var i = 0; i < this.lstProducts.length; i++) {
+      if (this.lstProducts[i].product_SKU === id) {
+          return i;
+      }
+  }
+  return -1;
+}
    public getProducts():any{
     const prodObserve = new Observable(observer => {
       setTimeout(() => {

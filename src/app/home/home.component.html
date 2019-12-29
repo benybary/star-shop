@@ -37,7 +37,7 @@
         {{product.product_Price | currency:'USD':true}}
       </td>
       <td class="text-center">
-        <!-- <a href (click)="pdtSvc.addCartItem(product, 1)">add to cart</a> -->
+        <a [routerLink]="['/cart', { SKU:product.product_SKU }]">Buy Now</a>
       </td>
     </tr>
     <tr class="well">

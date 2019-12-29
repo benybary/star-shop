@@ -10,6 +10,10 @@ import { ContactComponent } from './contact/contact.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { FormsModule }   from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'; 
+import {CartComponent} from './cart/cart.component'
+import { ProductService } from './services/product.service';
+import {ProductComponent} from './product-item/product.component'
+
 
 
 
@@ -20,7 +24,9 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     AboutComponent,
     ContactComponent,
-    ContactFormComponent
+    ContactFormComponent,
+    CartComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +35,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule
 
   ],
-  providers: [],
+  providers: [ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
